@@ -1,21 +1,29 @@
 "use client"
 
 import Image from "next/image"
-import { FileText, Heart, Menu, Search, ShoppingCart, X } from "lucide-react"
+import {
+  ChevronDown,
+  FileText,
+  Heart,
+  Menu,
+  Search,
+  ShoppingCart,
+  X,
+} from "lucide-react"
 import { useState } from "react"
 import { TopBar } from "./TopBar"
 
 const links = [
-  "Deals",
-  "Prefab Homes",
-  "Cabins",
-  "Tiny Homes",
-  "Park Models",
-  "Commercial Buildings",
-  "Floor Plans",
-  "Videos",
-  "Blogs",
-  "About Us",
+  { label: "Deals", active: true },
+  { label: "Prefab Homes", dropdown: true },
+  { label: "Cabins", dropdown: true },
+  { label: "Tiny Homes", dropdown: true },
+  { label: "Park Models", dropdown: true },
+  { label: "Commercial Buildings", dropdown: true },
+  { label: "Floor Plans" },
+  { label: "Videos" },
+  { label: "Blogs" },
+  { label: "About Us" },
 ]
 
 export function Header() {
@@ -72,15 +80,21 @@ export function Header() {
           {open ? <X /> : <Menu />}
         </button>
       </div>
-      <div className="hidden border-y border-slate-100 lg:block">
-        <nav className="site-container flex h-11 items-center justify-center gap-5">
-          {links.map((link, index) => (
+      <div className="hidden border-y border-[#d8e8f8] bg-[#eaf3fd] lg:block">
+        <nav className="site-container flex h-12 items-center gap-1">
+          {links.map(({ label, dropdown, active }) => (
             <a
-              key={link}
+              key={label}
               href="#"
-              className="text-[11px] font-black text-black hover:text-primary"
+              aria-current={active ? "page" : undefined}
+              className={`inline-flex items-center gap-1 rounded px-3 py-1.5 text-[13px] font-bold transition ${
+                active
+                  ? "bg-[#cfe4fa] text-primary"
+                  : "text-navy hover:text-primary"
+              }`}
             >
-              {link}
+              {label}
+              {dropdown && <ChevronDown size={14} strokeWidth={3} />}
             </a>
           ))}
         </nav>
@@ -88,14 +102,14 @@ export function Header() {
       {open && (
         <nav className="absolute inset-x-0 top-full border-t bg-white p-5 shadow-xl lg:hidden">
           <div className="site-container flex flex-col gap-4">
-            {links.map((link) => (
+            {links.map(({ label }) => (
               <a
-                key={link}
+                key={label}
                 href="#"
                 onClick={() => setOpen(false)}
                 className="font-black text-black"
               >
-                {link}
+                {label}
               </a>
             ))}
             <a
