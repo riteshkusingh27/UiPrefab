@@ -1,0 +1,10 @@
+{
+  "description": "Explore prefab homes, compare designs and floor plans, and request a quote with a responsive showcase built for prospective homeowners.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
