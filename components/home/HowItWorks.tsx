@@ -44,7 +44,7 @@ export function HowItWorks() {
                 <Icon size={27} strokeWidth={2.2} />
               </span>
               <h3 className="text-sm font-black text-black">{title}</h3>
-              <p className="mt-2 text-[11px] leading-4 text-slate-600">
+              <p className="mt-2 text-xs leading-5 text-slate-600 lg:text-sm lg:leading-6">
                 {text}
               </p>
               {index < steps.length - 1 && (

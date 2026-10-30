@@ -34,7 +34,7 @@ export function WhyChooseUs() {
     <section className="section-pad bg-[#eaf7ff]">
       <div className="site-container grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="max-w-md">
-          <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-primary">
+          <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-primary lg:text-[13px]">
             Why Choose Us
           </p>
           <h2 className="mt-3 text-3xl font-black leading-[1.05] text-navy sm:text-4xl">
@@ -42,7 +42,7 @@ export function WhyChooseUs() {
             <br />
             Live Better.
           </h2>
-          <p className="font-display mt-4 text-xs leading-6 text-slate-600">
+          <p className="font-display mt-4 text-xs leading-6 text-slate-600 lg:text-sm lg:leading-7">
             We make it easy to find and customize the perfect prefab home for
             your needs. From design to delivery, we&apos;re with you every step
             of the way.
@@ -65,7 +65,7 @@ export function WhyChooseUs() {
               </span>
               <div>
                 <h3 className="text-xs font-extrabold text-navy">{title}</h3>
-                <p className="mt-1 text-[10px] leading-4 text-slate-500">
+                <p className="mt-1 text-[11px] leading-5 text-slate-500 lg:text-[13px]">
                   {text}
                 </p>
               </div>

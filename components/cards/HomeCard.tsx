@@ -29,8 +29,8 @@ export function HomeCard({ home }: { home: Home }) {
         </button>
       </div>
       <div className="flex flex-1 flex-col p-4">
-        <h3 className="text-base font-black leading-6 text-navy">{home.name}</h3>
-        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-slate-500">
+        <h3 className="text-base font-black leading-6 text-navy lg:text-lg">{home.name}</h3>
+        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-slate-500 lg:text-[13px]">
           <span className="flex items-center gap-1">
             <House size={11} /> {home.sqft}
           </span>
@@ -46,7 +46,7 @@ export function HomeCard({ home }: { home: Home }) {
         </strong>
         <a
           href="#"
-          className="mt-3 flex w-full items-center justify-center gap-1 rounded bg-primary px-3 py-2.5 text-[10px] font-extrabold text-white transition hover:bg-navy"
+          className="mt-3 flex w-full items-center justify-center gap-1 rounded bg-primary px-3 py-2.5 font-condensed text-xs font-bold text-white transition hover:bg-navy lg:text-sm"
         >
           View Details <ArrowRight size={11} />
         </a>

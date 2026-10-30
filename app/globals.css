@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-oswald), sans-serif;
+  --font-condensed: var(--font-roboto-condensed), sans-serif;
   --color-navy: #082c59;
   --color-deep-navy: #062448;
   --color-primary: #1557a6;
@@ -12,6 +15,7 @@
     scroll-behavior: smooth;
   }
   body {
+    font-family: var(--font-sans);
     background: white;
     color: #12243a;
     -webkit-font-smoothing: antialiased;
@@ -20,7 +24,9 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-oswald), sans-serif;
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
   button, a, input, select {
     outline-offset: 3px;
@@ -35,15 +41,16 @@
     @apply py-12 md:py-16;
   }
   .section-title {
-    @apply text-2xl font-extrabold tracking-tight text-navy sm:text-3xl;
+    @apply text-2xl font-extrabold tracking-tight text-navy sm:text-3xl lg:text-4xl;
     font-family: var(--font-oswald), sans-serif;
   }
   .section-copy {
-    @apply mt-1 text-sm text-slate-500;
+    @apply mt-1 text-sm text-slate-500 lg:text-base;
     font-family: var(--font-oswald), sans-serif;
   }
-  .font-display {
-    font-family: var(--font-oswald), sans-serif;
+  .hero-title {
+    font-size: clamp(2.25rem, 6.5vw, 3.75rem);
+    line-height: 0.98;
   }
   .card-shadow {
     box-shadow: 0 12px 36px rgba(8, 44, 89, 0.09);

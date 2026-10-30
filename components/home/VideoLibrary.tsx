@@ -19,7 +19,7 @@ export function VideoLibrary() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#04172d]/95 via-[#062448]/70 to-transparent" />
         <div className="site-container relative flex min-h-[370px] flex-col items-start justify-center py-12">
           <div className="max-w-md">
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#75b9ff]">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#75b9ff] lg:text-[13px]">
               Video Tour
             </p>
             <h2 className="mt-3 text-3xl font-black leading-tight sm:text-4xl">
@@ -27,7 +27,7 @@ export function VideoLibrary() {
               <br />
               at Our Prefab Homes
             </h2>
-            <p className="font-display mt-4 text-xs leading-5 text-white/75">
+            <p className="font-display mt-4 text-xs leading-5 text-white/75 lg:text-sm lg:leading-6">
               Watch real home tours, customer stories, and expert guides on our
               YouTube channel. Get inspired and learn everything about prefab
               living.

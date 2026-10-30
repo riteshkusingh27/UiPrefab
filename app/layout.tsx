@@ -1,12 +1,24 @@
 import type { Metadata } from "next"
-import { Inter, Oswald } from "next/font/google"
+import { Oswald, Roboto, Roboto_Condensed } from "next/font/google"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"], display: "swap" })
+const roboto = Roboto({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto",
+})
 const oswald = Oswald({
   subsets: ["latin"],
   display: "swap",
+  weight: ["500", "600", "700"],
   variable: "--font-oswald",
+})
+const robotoCondensed = Roboto_Condensed({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["600", "700"],
+  variable: "--font-roboto-condensed",
 })
 
 export const metadata: Metadata = {
@@ -19,7 +31,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.className} ${oswald.variable}`}>
+    <html
+      lang="en"
+      className={`${roboto.variable} ${oswald.variable} ${robotoCondensed.variable}`}
+    >
       <body>{children}</body>
     </html>
   )

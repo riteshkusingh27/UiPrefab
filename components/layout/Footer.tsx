@@ -9,11 +9,16 @@ import {
 import { Mail, MapPin, Phone } from "lucide-react"
 
 const socialLinks = [
-  { label: "Facebook", icon: FaFacebookF },
-  { label: "Instagram", icon: FaInstagram },
-  { label: "YouTube", icon: FaYoutube },
-  { label: "Pinterest", icon: FaPinterestP },
-  { label: "LinkedIn", icon: FaLinkedinIn },
+  { label: "Facebook", icon: FaFacebookF, brand: "bg-[#1877f2]" },
+  {
+    label: "Instagram",
+    icon: FaInstagram,
+    brand:
+      "bg-[radial-gradient(circle_at_30%_107%,#fdf497_0%,#fd5949_45%,#d6249f_60%,#285aeb_90%)]",
+  },
+  { label: "YouTube", icon: FaYoutube, brand: "bg-[#ff0000]" },
+  { label: "Pinterest", icon: FaPinterestP, brand: "bg-[#e60023]" },
+  { label: "LinkedIn", icon: FaLinkedinIn, brand: "bg-[#0a66c2]" },
 ]
 
 const groups = [
@@ -58,7 +63,7 @@ export function Footer() {
               width={2034}
               height={587}
               sizes="190px"
-              className="h-auto w-[190px] brightness-0 invert"
+              className="h-auto w-[190px]"
             />
           </a>
           <p className="mt-4 max-w-xs text-xs leading-5">
@@ -66,12 +71,12 @@ export function Footer() {
             Sustainable. Customizable.
           </p>
           <div className="mt-5 flex items-center gap-3">
-            {socialLinks.map(({ label, icon: Icon }) => (
+            {socialLinks.map(({ label, icon: Icon, brand }) => (
               <a
                 href="#"
                 key={label}
                 aria-label={label}
-                className="grid size-8 place-items-center rounded-full border border-white/10 bg-white/5 text-white/75 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
+                className={`grid size-8 place-items-center rounded-full text-white transition hover:opacity-80 ${brand}`}
               >
                 <Icon size={15} />
               </a>
@@ -84,7 +89,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2">
               {group.links.map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-[11px] hover:text-white">
+                  <a href="#" className="text-[11px] hover:text-white lg:text-[13px]">
                     {link}
                   </a>
                 </li>
@@ -94,7 +99,7 @@ export function Footer() {
         ))}
         <div>
           <h3 className="text-xs font-bold text-white">Contact Us</h3>
-          <div className="mt-4 space-y-4 text-[11px]">
+          <div className="mt-4 space-y-4 text-[11px] lg:text-[13px]">
             <a href="tel:+15551234567" className="flex gap-2 hover:text-white">
               <Phone size={14} className="shrink-0 text-[#69b1ff]" /> (555)
               123-4567
@@ -116,7 +121,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="site-container flex flex-col gap-3 py-5 text-[10px] sm:flex-row sm:items-center sm:justify-between">
+        <div className="site-container flex flex-col gap-3 py-5 text-[11px] sm:flex-row sm:items-center sm:justify-between lg:text-[13px]">
           <p>© 2026 PrefabHome.com. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="#">Privacy Policy</a>

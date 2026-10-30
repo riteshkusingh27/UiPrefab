@@ -16,13 +16,13 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
               <Star key={i} size={13} fill="currentColor" />
             ))}
           </div>
-          <p className="mt-2 text-xs leading-5 text-slate-600">
+          <p className="mt-2 text-[13px] leading-5 text-slate-600 lg:text-sm lg:leading-6">
             &ldquo;{testimonial.quote}&rdquo;
           </p>
           <h3 className="mt-3 text-sm font-extrabold text-navy">
             {testimonial.name}
           </h3>
-          <p className="text-[10px] text-slate-400">{testimonial.location}</p>
+          <p className="text-[11px] text-slate-400 lg:text-[13px]">{testimonial.location}</p>
         </div>
       </div>
     </article>

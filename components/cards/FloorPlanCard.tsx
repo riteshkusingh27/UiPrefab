@@ -20,9 +20,9 @@ export function FloorPlanCard({
           LIVING
         </span>
       </div>
-      <h3 className="mt-4 text-base font-extrabold text-navy">{plan.name}</h3>
-      <p className="mt-1 text-[10px] text-slate-500">{plan.sqft}</p>
-      <p className="mt-3 text-[10px] text-slate-500">
+      <h3 className="mt-4 text-base font-extrabold text-navy lg:text-lg">{plan.name}</h3>
+      <p className="mt-1 text-[11px] text-slate-500 lg:text-[13px]">{plan.sqft}</p>
+      <p className="mt-3 text-[11px] leading-5 text-slate-500 lg:text-[13px]">
         {plan.beds} Beds <span className="mx-1">|</span> {plan.baths} Baths
       </p>
       <a

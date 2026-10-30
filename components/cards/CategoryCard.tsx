@@ -15,13 +15,13 @@ export function CategoryCard({ category }: { category: Category }) {
         />
       </div>
       <div className="p-4 text-center">
-        <h3 className="text-base font-extrabold text-navy">{category.title}</h3>
-        <p className="mt-2 min-h-8 text-[10px] leading-4 text-slate-500">
+        <h3 className="text-base font-extrabold text-navy lg:text-lg">{category.title}</h3>
+        <p className="mt-2 min-h-9 text-xs leading-5 text-slate-500 lg:text-sm">
           {category.description}
         </p>
         <a
           href="#"
-          className="mt-3 inline-flex items-center gap-1 text-[10px] font-extrabold text-primary"
+          className="mt-3 inline-flex items-center gap-1 font-condensed text-xs font-bold text-primary lg:text-sm"
         >
           Explore Models <ArrowRight size={11} />
         </a>

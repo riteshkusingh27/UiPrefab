@@ -39,7 +39,7 @@ export function FloorPlansSection() {
               <h3 className="text-sm font-extrabold text-navy">
                 Need a Custom Floor Plan?
               </h3>
-              <p className="mt-1 text-[10px] leading-4 text-slate-500">
+              <p className="mt-1 text-[11px] leading-5 text-slate-500 lg:text-[13px]">
                 Our team can help you design the perfect home for your needs.
               </p>
               <a

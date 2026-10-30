@@ -47,7 +47,7 @@ export function Header() {
           <input
             aria-label="Search homes"
             placeholder="Search prefab homes, models, floor plans..."
-            className="min-w-0 flex-1 bg-transparent px-5 py-3 text-xs outline-none"
+            className="min-w-0 flex-1 bg-transparent px-5 py-3 text-xs outline-none lg:text-sm"
           />
           <button
             aria-label="Search"
@@ -65,7 +65,7 @@ export function Header() {
             <a
               href={label === "Get a Quote" ? "#quote" : "#"}
               key={label}
-              className="flex flex-col items-center gap-1 text-[10px] font-black text-black hover:text-primary"
+              className="flex flex-col items-center gap-1 font-condensed text-[11px] font-bold text-black hover:text-primary lg:text-[13px]"
             >
               <Icon size={20} />
               <span>{label}</span>
@@ -75,19 +75,19 @@ export function Header() {
         <button
           onClick={() => setOpen(!open)}
           aria-label="Toggle navigation"
-          className="focus-ring lg:hidden"
+          className="focus-ring ml-auto lg:hidden"
         >
           {open ? <X /> : <Menu />}
         </button>
       </div>
       <div className="hidden border-y border-[#d8e8f8] bg-[#eaf3fd] lg:block">
-        <nav className="site-container flex h-12 items-center gap-1">
+        <nav className="site-container flex h-12 items-center justify-center gap-1">
           {links.map(({ label, dropdown, active }) => (
             <a
               key={label}
               href="#"
               aria-current={active ? "page" : undefined}
-              className={`inline-flex items-center gap-1 rounded px-3 py-1.5 text-[13px] font-bold transition ${
+              className={`inline-flex items-center gap-1 rounded px-3 py-1.5 font-condensed text-[13px] font-bold transition lg:text-[15px] ${
                 active
                   ? "bg-[#cfe4fa] text-primary"
                   : "text-navy hover:text-primary"
@@ -100,22 +100,40 @@ export function Header() {
         </nav>
       </div>
       {open && (
-        <nav className="absolute inset-x-0 top-full border-t bg-white p-5 shadow-xl lg:hidden">
-          <div className="site-container flex flex-col gap-4">
-            {links.map(({ label }) => (
-              <a
-                key={label}
-                href="#"
-                onClick={() => setOpen(false)}
-                className="font-black text-black"
+        <nav className="absolute inset-x-0 top-full max-h-[calc(100dvh-9rem)] overflow-y-auto overscroll-contain border-t bg-white shadow-xl lg:hidden">
+          <div className="site-container flex flex-col gap-4 py-5">
+            <div className="flex items-center overflow-hidden rounded-lg border border-slate-200 bg-slate-50">
+              <input
+                aria-label="Search homes"
+                placeholder="Search prefab homes, models, floor plans..."
+                className="min-w-0 flex-1 bg-transparent px-4 py-3 text-xs outline-none"
+              />
+              <button
+                aria-label="Search"
+                className="grid w-12 self-stretch place-items-center bg-primary text-white"
               >
-                {label}
-              </a>
-            ))}
+                <Search size={18} />
+              </button>
+            </div>
+            <div className="divide-y divide-[#d8e8f8] overflow-hidden rounded-lg">
+              {links.map(({ label, active }) => (
+                <a
+                  key={label}
+                  href="#"
+                  onClick={() => setOpen(false)}
+                  aria-current={active ? "page" : undefined}
+                  className={`block px-4 py-3.5 font-condensed text-[15px] font-bold ${
+                    active ? "bg-[#cfe4fa] text-primary" : "bg-[#eaf3fd] text-navy"
+                  }`}
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
             <a
               href="#quote"
               onClick={() => setOpen(false)}
-              className="rounded bg-primary px-5 py-3 text-center font-bold text-white"
+              className="rounded-md bg-primary px-5 py-3 text-center font-condensed text-[15px] font-bold text-white"
             >
               Get a Quote
             </a>
