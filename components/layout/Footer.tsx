@@ -56,15 +56,23 @@ export function Footer() {
     <footer className="bg-deep-navy text-white/65">
       <div className="site-container grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.35fr_0.85fr_0.9fr_1fr]">
         <div>
-          <a href="#" aria-label="PrefabHome.com home" className="inline-block">
+          <a
+            href="#"
+            aria-label="PrefabHome.com home"
+            className="flex items-center gap-2.5 sm:gap-3"
+          >
             <Image
-              src="/images/prefabhome-logo.png"
-              alt="PrefabHome.com"
-              width={2034}
-              height={587}
-              sizes="190px"
-              className="h-auto w-[190px]"
+              src="/images/houseicon.png"
+              alt=""
+              width={1254}
+              height={1254}
+              sizes="(min-width: 640px) 56px, 44px"
+              className="size-11 shrink-0 object-contain sm:size-14"
             />
+            <span className="text-xl font-extrabold tracking-tight whitespace-nowrap sm:text-2xl">
+              <span className="text-white">Prefab</span>
+              <span className="text-[#69b1ff]">Home.com</span>
+            </span>
           </a>
           <p className="mt-4 max-w-xs text-xs leading-5">
             High-quality prefab and modular homes for modern living. Affordable.
