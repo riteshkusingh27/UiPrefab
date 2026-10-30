@@ -46,7 +46,7 @@ export function HomeCard({ home }: { home: Home }) {
         </strong>
         <a
           href="#"
-          className="mt-3 flex w-full items-center justify-center gap-1 rounded bg-primary px-3 py-2.5 font-condensed text-xs font-bold text-white transition hover:bg-navy lg:text-sm"
+          className="mt-3 flex w-full items-center justify-center gap-1 rounded bg-primary px-3 py-2.5 font-ui text-xs font-bold text-white transition hover:bg-navy lg:text-sm"
         >
           View Details <ArrowRight size={11} />
         </a>

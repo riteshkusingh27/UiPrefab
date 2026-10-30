@@ -18,7 +18,7 @@ export function FinalCTA() {
       <div className="site-container relative grid items-center gap-6 md:grid-cols-[1fr_440px]">
         <div>
           <h2 className="text-2xl font-black">Stay Updated</h2>
-          <p className="font-display mt-1 text-xs text-white/85 lg:text-sm">
+          <p className="mt-1 text-xs text-white/85 lg:text-sm">
             Get the latest models, exclusive offers and helpful tips.
           </p>
         </div>

@@ -1,24 +1,18 @@
 import type { Metadata } from "next"
-import { Oswald, Roboto, Roboto_Condensed } from "next/font/google"
+import { Manrope, Playfair_Display } from "next/font/google"
 import "./globals.css"
 
-const roboto = Roboto({
+const manrope = Manrope({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "700"],
-  variable: "--font-roboto",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
 })
-const oswald = Oswald({
+const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
-  weight: ["500", "600", "700"],
-  variable: "--font-oswald",
-})
-const robotoCondensed = Roboto_Condensed({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["600", "700"],
-  variable: "--font-roboto-condensed",
+  weight: ["400", "700", "800", "900"],
+  variable: "--font-playfair",
 })
 
 export const metadata: Metadata = {
@@ -31,10 +25,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${roboto.variable} ${oswald.variable} ${robotoCondensed.variable}`}
-    >
+    <html lang="en" className={`${manrope.variable} ${playfair.variable}`}>
       <body>{children}</body>
     </html>
   )

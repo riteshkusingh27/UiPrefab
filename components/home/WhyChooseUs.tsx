@@ -42,7 +42,7 @@ export function WhyChooseUs() {
             <br />
             Live Better.
           </h2>
-          <p className="font-display mt-4 text-xs leading-6 text-slate-600 lg:text-sm lg:leading-7">
+          <p className="mt-4 text-xs leading-6 text-slate-600 lg:text-sm lg:leading-7">
             We make it easy to find and customize the perfect prefab home for
             your needs. From design to delivery, we&apos;re with you every step
             of the way.

@@ -21,7 +21,7 @@ export function CategoryCard({ category }: { category: Category }) {
         </p>
         <a
           href="#"
-          className="mt-3 inline-flex items-center gap-1 font-condensed text-xs font-bold text-primary lg:text-sm"
+          className="mt-3 inline-flex items-center gap-1 font-ui text-xs font-bold text-primary lg:text-sm"
         >
           Explore Models <ArrowRight size={11} />
         </a>

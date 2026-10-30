@@ -42,8 +42,8 @@ export function Header() {
             width={2034}
             height={587}
             priority
-            sizes="200px"
-            className="h-auto w-[165px] sm:w-[190px]"
+            sizes="260px"
+            className="h-auto w-[195px] sm:w-[230px] lg:w-[250px]"
           />
         </a>
         <div className="hidden min-w-0 flex-1 items-center overflow-hidden rounded-lg border border-slate-200 bg-slate-50 lg:flex">
@@ -73,7 +73,7 @@ export function Header() {
                   ? undefined
                   : `${label}, ${count} ${count === 1 ? "item" : "items"}`
               }
-              className="flex flex-col items-center gap-1 font-condensed text-[11px] font-bold text-black hover:text-primary lg:text-[13px]"
+              className="flex flex-col items-center gap-1 font-ui text-[11px] font-bold text-black hover:text-primary lg:text-[13px]"
             >
               <span className="relative">
                 <Icon size={20} />
@@ -105,7 +105,7 @@ export function Header() {
               key={label}
               href="#"
               aria-current={active ? "page" : undefined}
-              className={`inline-flex items-center gap-1 rounded px-3 py-1.5 font-condensed text-[13px] font-bold transition lg:text-[15px] ${
+              className={`inline-flex items-center gap-1 rounded px-3 py-1.5 font-ui text-[13px] font-bold transition lg:text-[15px] ${
                 active
                   ? "bg-[#cfe4fa] text-primary"
                   : "text-navy hover:text-primary"
@@ -140,7 +140,7 @@ export function Header() {
                   href="#"
                   onClick={() => setOpen(false)}
                   aria-current={active ? "page" : undefined}
-                  className={`block px-4 py-3.5 font-condensed text-[15px] font-bold ${
+                  className={`block px-4 py-3.5 font-ui text-[15px] font-bold ${
                     active ? "bg-[#cfe4fa] text-primary" : "bg-[#eaf3fd] text-navy"
                   }`}
                 >
@@ -151,7 +151,7 @@ export function Header() {
             <a
               href="#quote"
               onClick={() => setOpen(false)}
-              className="rounded-md bg-primary px-5 py-3 text-center font-condensed text-[15px] font-bold text-white"
+              className="rounded-md bg-primary px-5 py-3 text-center font-ui text-[15px] font-bold text-white"
             >
               Get a Quote
             </a>

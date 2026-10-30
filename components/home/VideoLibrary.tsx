@@ -27,7 +27,7 @@ export function VideoLibrary() {
               <br />
               at Our Prefab Homes
             </h2>
-            <p className="font-display mt-4 text-xs leading-5 text-white/75 lg:text-sm lg:leading-6">
+            <p className="mt-4 text-xs leading-5 text-white/75 lg:text-sm lg:leading-6">
               Watch real home tours, customer stories, and expert guides on our
               YouTube channel. Get inspired and learn everything about prefab
               living.
