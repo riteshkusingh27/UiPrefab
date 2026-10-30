@@ -14,16 +14,17 @@ import { useState } from "react"
 import { TopBar } from "./TopBar"
 
 const links = [
-  { label: "Deals", active: true },
-  { label: "Prefab Homes", dropdown: true },
-  { label: "Cabins", dropdown: true },
-  { label: "Tiny Homes", dropdown: true },
-  { label: "Park Models", dropdown: true },
-  { label: "Commercial Buildings", dropdown: true },
-  { label: "Floor Plans" },
-  { label: "Videos" },
-  { label: "Blogs" },
-  { label: "About Us" },
+  { label: "Modular Homes", active: true },
+  { label: "Prefab Homes" },
+  { label: "Barndominiums" },
+  { label: "House Kits" },
+  { label: "Tiny Homes" },
+  { label: "Park Models" },
+  { label: "Cabins" },
+  { label: "ADUs & Granny Pods" },
+  { label: "A-Frames" },
+  { label: "Commercial" },
+  { label: "More", dropdown: true },
 ]
 
 // Static until a real cart store exists; swap for the live count then.
@@ -99,13 +100,13 @@ export function Header() {
         </button>
       </div>
       <div className="hidden border-y border-[#d8e8f8] bg-[#eaf3fd] lg:block">
-        <nav className="site-container flex h-12 items-center justify-center gap-1">
+        <nav className="site-container flex h-12 items-center justify-center gap-0.5 xl:gap-1">
           {links.map(({ label, dropdown, active }) => (
             <a
               key={label}
               href="#"
               aria-current={active ? "page" : undefined}
-              className={`inline-flex items-center gap-1 rounded px-3 py-1.5 font-ui text-[13px] font-bold transition lg:text-[15px] ${
+              className={`inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded px-2 py-1.5 font-ui text-[12px] font-bold transition xl:text-[13px] ${
                 active
                   ? "bg-[#cfe4fa] text-primary"
                   : "text-navy hover:text-primary"
