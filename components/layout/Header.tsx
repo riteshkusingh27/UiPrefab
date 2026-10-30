@@ -26,6 +26,9 @@ const links = [
   { label: "About Us" },
 ]
 
+// Static until a real cart store exists; swap for the live count then.
+const cartCount = 0
+
 export function Header() {
   const [open, setOpen] = useState(false)
   return (
@@ -60,14 +63,29 @@ export function Header() {
           {[
             { icon: Heart, label: "Wishlist" },
             { icon: FileText, label: "Get a Quote" },
-            { icon: ShoppingCart, label: "Cart" },
-          ].map(({ icon: Icon, label }) => (
+            { icon: ShoppingCart, label: "Cart", count: cartCount },
+          ].map(({ icon: Icon, label, count }) => (
             <a
               href={label === "Get a Quote" ? "#quote" : "#"}
               key={label}
+              aria-label={
+                count === undefined
+                  ? undefined
+                  : `${label}, ${count} ${count === 1 ? "item" : "items"}`
+              }
               className="flex flex-col items-center gap-1 font-condensed text-[11px] font-bold text-black hover:text-primary lg:text-[13px]"
             >
-              <Icon size={20} />
+              <span className="relative">
+                <Icon size={20} />
+                {count !== undefined && (
+                  <span
+                    aria-hidden
+                    className="absolute -right-2 -top-1.5 grid h-4 min-w-4 place-items-center rounded-full bg-primary px-1 text-[10px] font-bold leading-none text-white"
+                  >
+                    {count > 99 ? "99+" : count}
+                  </span>
+                )}
+              </span>
               <span>{label}</span>
             </a>
           ))}
