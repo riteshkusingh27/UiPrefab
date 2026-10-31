@@ -18,10 +18,11 @@ export function TopBar() {
         <div className="flex w-full items-center gap-3 font-ui sm:ml-auto sm:w-auto sm:gap-5">
           <a
             href="tel:+18001234567"
-            className="flex items-center gap-1.5 hover:text-white"
+            className="call-pulse group flex items-center gap-1.5 rounded-full bg-primary px-3 py-1 font-bold text-white ring-1 ring-white/25 transition-colors duration-200 hover:bg-white hover:text-primary"
           >
-            <Phone size={16} />
-            <span className="hidden sm:inline">Call Us:</span> (555) 123-4567
+            <Phone size={16} className="call-ring shrink-0" />
+            <span className="hidden sm:inline">Call Us:</span>
+            <span className="tracking-wide">(555) 123-4567</span>
           </a>
           <a href="#" className="ml-auto flex items-center gap-1.5 sm:ml-0">
             <CircleUserRound size={16} /> My Account

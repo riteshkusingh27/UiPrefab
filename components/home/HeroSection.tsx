@@ -1,67 +1,127 @@
 import Image from "next/image"
-import { ArrowRight, BadgeCheck, PanelsTopLeft, Truck } from "lucide-react"
+import {
+  ArrowRight,
+  Bolt,
+  Calendar,
+  Hammer,
+  House,
+  Leaf,
+  Lightbulb,
+  Mountain,
+  ShieldCheck,
+  TreePine,
+  Wrench,
+} from "lucide-react"
 
-const stats = [
-  { icon: BadgeCheck, top: "Wide Range", bottom: "of Models" },
-  { icon: PanelsTopLeft, top: "Customizable", bottom: "Floor Plans" },
-  { icon: Truck, top: "Fast & Reliable", bottom: "Delivery" },
+const tags = [
+  { icon: House, label: "Modular Homes", accent: "text-sky-400" },
+  { icon: TreePine, label: "Cabins & Tiny Homes", accent: "text-emerald-400" },
+  { icon: Lightbulb, label: "Energy Efficient", accent: "text-amber-400" },
+  { icon: Mountain, label: "Custom Builds", accent: "text-sky-300" },
+]
+
+const benefits = [
+  { icon: Leaf, label: "Affordable Living" },
+  { icon: Bolt, label: "Energy Efficient" },
+  { icon: Wrench, label: "Custom Designs" },
+  { icon: House, label: "Fast Construction" },
+  { icon: ShieldCheck, label: "Built to Last" },
+  { icon: Hammer, label: "Eco Friendly" },
 ]
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-[#eef8ff] text-navy">
+    <section className="relative overflow-hidden bg-deep-navy">
+      {/* Background image - crisp & fully visible */}
       <Image
         src="/images/hero-lake-house.png"
         alt="Modern prefab home beside a mountain lake at sunset"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center lg:object-[58%_center]"
+        className="object-cover object-center lg:object-[60%_center]"
       />
-      <div className="site-container relative flex min-h-[470px] items-center py-10 sm:min-h-[520px] sm:py-14">
-        <div className="min-w-0 max-w-[620px]">
-          <p className="font-ui text-xs font-bold uppercase tracking-[0.1em] text-primary sm:text-[13px] sm:tracking-[0.18em] lg:text-sm">
-            Modern | Affordable | Sustainable
-          </p>
-          <h1 className="hero-title mt-4 font-black tracking-tight">
-            Prefab Homes
+
+      {/* Bombshelter-style cinematic gradient overlay: darkens the text area while preserving the house view */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-deep-navy/85 via-deep-navy/45 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-deep-navy/60 via-transparent to-deep-navy/20" />
+
+      {/* Main hero content */}
+      <div className="site-container relative flex min-h-[540px] items-center py-14 sm:min-h-[600px] sm:py-20">
+        <div className="min-w-0 max-w-[700px]">
+          {/* Eyebrow badge */}
+          {/* Headline inspired by bombshelter's high-contrast bold typography */}
+          <h1 className="hero-title font-black uppercase text-white drop-shadow-sm">
+            Your Dream Home.
             <br />
-            for a Brighter
+            <span className="text-primary italic">Prefabricated.</span>
             <br />
-            <span className="text-primary">Tomorrow</span>
+            Built for{" "}
+            <span className="text-sky-300">
+              Tomorrow.
+            </span>
           </h1>
-          <p className="mt-4 max-w-lg text-sm leading-6 text-slate-600 sm:mt-5 lg:text-base lg:leading-7">
-            Discover high-quality prefab homes, cabins, park models and
-            commercial buildings designed for modern living. Customizable,
-            affordable and built to last.
+
+          {/* Subheading */}
+          <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/80 sm:mt-6 lg:text-base lg:leading-7">
+            Discover precision-engineered prefab homes, luxury cabins, park models,
+            and commercial modular buildings from vetted American manufacturers.
+            Delivered and assembled anywhere nationwide.
           </p>
-          <div className="mt-7 flex flex-wrap gap-3">
+
+          {/* Bombshelter-inspired Action Buttons */}
+          <div className="mt-8 flex flex-wrap items-center gap-3.5">
+            {/* Primary button: bold uppercase with hover arrow slide */}
             <a
               href="#featured"
-              className="inline-flex min-w-[9.5rem] flex-1 items-center justify-center gap-2 rounded-md border border-primary bg-primary px-5 py-3 font-ui text-[13px] font-bold tracking-wide text-white sm:flex-none lg:text-[15px] sm:justify-start"
+              className="group inline-flex min-w-[11rem] items-center justify-center gap-2.5 rounded-md bg-primary px-6 py-3.5 font-ui text-xs font-extrabold uppercase tracking-wider text-white shadow-lg shadow-primary/25 transition-all duration-200 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/35 active:scale-[0.98] lg:text-[13px]"
             >
-              Explore Homes <ArrowRight size={14} />
+              <span>Explore Homes</span>
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-200 group-hover:translate-x-1"
+              />
             </a>
+
+            {/* Secondary button: tactical border with icon */}
             <a
               href="#quote"
-              className="inline-flex min-w-[9.5rem] flex-1 items-center justify-center gap-2 rounded-md border border-primary bg-white px-5 py-3 font-ui text-[13px] font-bold tracking-wide text-primary sm:flex-none lg:text-[15px] sm:justify-start"
+              className="group inline-flex min-w-[11rem] items-center justify-center gap-2.5 rounded-md border border-white/30 bg-slate-900/60 px-6 py-3.5 font-ui text-xs font-extrabold uppercase tracking-wider text-white backdrop-blur-md transition-all duration-200 hover:border-white/60 hover:bg-slate-900/80 active:scale-[0.98] lg:text-[13px]"
             >
-              Get a Free Quote
+              <Calendar size={16} className="text-sky-300" />
+              <span>Request Consultation</span>
             </a>
           </div>
-          <div className="mt-8 grid grid-cols-1 gap-4 min-[420px]:grid-cols-3 sm:mt-10">
-            {stats.map(({ icon: Icon, top, bottom }) => (
-              <div key={top} className="flex items-center gap-2.5">
-                <span className="grid size-9 shrink-0 place-items-center rounded-full border border-primary/25 bg-white text-primary">
-                  <Icon size={18} />
-                </span>
-                <div>
-                  <strong className="block text-[11px] lg:text-[13px]">{top}</strong>
-                  <span className="text-[10px] text-slate-500 lg:text-xs">{bottom}</span>
-                </div>
-              </div>
+
+          {/* Bombshelter-style Tag Badges */}
+          <div className="mt-8 flex flex-wrap gap-2.5">
+            {tags.map(({ icon: Icon, label, accent }) => (
+              <span
+                key={label}
+                className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-slate-950/50 px-3.5 py-2 text-xs font-semibold text-white/90 backdrop-blur-md transition hover:border-white/30 hover:bg-slate-950/70"
+              >
+                <Icon size={14} className={accent} />
+                <span>{label}</span>
+              </span>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Bombshelter-style Trust Strip at the base of the hero */}
+      <div className="relative border-t border-white/15 bg-slate-950/70 backdrop-blur-md">
+        <div className="site-container grid grid-cols-2 py-3.5 sm:grid-cols-3 lg:grid-cols-6">
+          {benefits.map(({ icon: Icon, label }) => (
+            <div
+              key={label}
+              className="flex items-center justify-center gap-2.5 border-white/10 px-3 py-2 text-center lg:border-r lg:last:border-0"
+            >
+              <Icon size={18} className="shrink-0 text-sky-400" />
+              <span className="text-[11px] font-bold uppercase tracking-wider text-white/85 lg:text-xs">
+                {label}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

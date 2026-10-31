@@ -55,8 +55,8 @@
     @apply mt-1 text-sm leading-relaxed text-slate-500 lg:text-base;
   }
   .hero-title {
-    font-size: clamp(2.25rem, 6.5vw, 3.75rem);
-    line-height: 1.02;
+    font-size: clamp(2.5rem, 7vw, 4.25rem);
+    line-height: 1.05;
     letter-spacing: -0.035em;
   }
   .card-shadow {
@@ -64,5 +64,69 @@
   }
   .focus-ring {
     @apply focus-visible:outline-2 focus-visible:outline-primary;
+  }
+}
+
+/* Call-to-action ring: the button breathes while the handset shakes. */
+@keyframes call-pulse {
+  0%,
+  100% {
+    scale: 1;
+    box-shadow: 0 8px 20px rgba(21, 87, 166, 0.28);
+  }
+  50% {
+    scale: 1.07;
+    box-shadow:
+      0 10px 28px rgba(21, 87, 166, 0.5),
+      0 0 0 6px rgba(21, 87, 166, 0.12);
+  }
+}
+
+@keyframes call-ring {
+  0%,
+  55%,
+  100% {
+    rotate: 0deg;
+  }
+  60% {
+    rotate: -16deg;
+  }
+  65% {
+    rotate: 16deg;
+  }
+  70% {
+    rotate: -12deg;
+  }
+  75% {
+    rotate: 12deg;
+  }
+  80% {
+    rotate: 0deg;
+  }
+}
+
+@utility call-pulse {
+  animation: call-pulse 1.8s ease-in-out infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@utility call-ring {
+  animation: call-ring 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .call-pulse,
+  .call-ring {
+    animation: none;
+  }
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

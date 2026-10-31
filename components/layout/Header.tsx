@@ -100,7 +100,7 @@ export function Header() {
         </button>
       </div>
       <div className="hidden border-y border-[#d8e8f8] bg-[#eaf3fd] lg:block">
-        <nav className="site-container flex h-12 items-center justify-center gap-0.5 xl:gap-1">
+        <nav className="site-container flex h-12 items-center justify-between">
           {links.map(({ label, dropdown, active }) => (
             <a
               key={label}

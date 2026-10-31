@@ -11,24 +11,32 @@ export function NewsletterForm() {
   }
   if (done)
     return (
-      <p className="mt-4 text-xs font-semibold text-[#80bdff]">
-        Thanks for subscribing!
+      <p className="mt-4 text-xs font-bold uppercase tracking-wider text-sky-200">
+        ✓ Thank you for subscribing!
       </p>
     )
   return (
     <form
       onSubmit={submit}
-      className="mt-4 flex overflow-hidden rounded bg-white"
+      className="mt-4 flex overflow-hidden rounded-md border border-white/20 bg-white/10 p-1 shadow-inner backdrop-blur-md"
     >
       <input
         type="email"
         required
         aria-label="Email address"
-        placeholder="Your Email Address"
-        className="min-w-0 flex-1 px-3 py-3 text-xs text-slate-700 outline-none"
+        placeholder="Enter your email address..."
+        className="min-w-0 flex-1 bg-transparent px-3.5 py-2.5 text-xs text-white placeholder-white/60 outline-none"
       />
-      <button aria-label="Subscribe" className="bg-primary px-4 text-white">
-        <ArrowRight size={16} />
+      <button
+        type="submit"
+        aria-label="Subscribe"
+        className="group inline-flex items-center gap-1.5 rounded bg-white px-4 py-2 font-ui text-xs font-black uppercase tracking-wider text-navy transition-all duration-200 hover:bg-sky-100 active:scale-95"
+      >
+        <span>Subscribe</span>
+        <ArrowRight
+          size={14}
+          className="transition-transform duration-200 group-hover:translate-x-0.5"
+        />
       </button>
     </form>
   )
